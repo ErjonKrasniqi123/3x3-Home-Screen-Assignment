@@ -27,6 +27,29 @@ Boolean rect3ON=false;
 String title5 = "Pick One Chocolate";
 float titleX5, titleY5, titleWidth5, titleHeight5;
 PFont titleFont5;
+float nextButtonX3, nextButtonY3, nextButtonWidth3, nextButtonHeight3;
+float nextButtonX4, nextButtonY4, nextButtonWidth4, nextButtonHeight4;
+float nextButtonX5, nextButtonY5, nextButtonWidth5, nextButtonHeight5;
+String title6 = "By choosing this chocoloate, you are carefree";
+float titleX6, titleY6, titleWidth6, titleHeight6;
+PFont titleFont6;
+Boolean rect4ON=false;
+String title7= "By choosing this chocoloate, you are smart and feel proud of yourself";
+float titleX7, titleY7, titleWidth7, titleHeight7;
+PFont titleFont7;
+Boolean rect5ON=false;
+String title8= "By choosing this chocoloate, you seek adventures and are a daredevil";
+float titleX8, titleY8, titleWidth8, titleHeight8;
+PFont titleFont8;
+Boolean rect6ON=false;
+float eraseButtonX1,eraseButtonY1, eraseButtonWidth, eraseButtonHeight;
+String title9= "Pause Program";
+float titleX9, titleY9, titleWidth9, titleHeight9;
+PFont titleFont9;
+float nextButtonX6, nextButtonY6, nextButtonWidth6, nextButtonHeight6;
+String title10= "Stop Program";
+float titleX10, titleY10, titleWidth10, titleHeight10;
+PFont titleFont10;
 //
 void setup ()  
 { 
@@ -87,7 +110,7 @@ void setup ()
   startButtonWidth=width/10;
   startButtonHeight=height/10;
   //
-  quitButtonX=width*1/2.2;
+  quitButtonX=width*1/2.4;
   quitButtonY=height*1/20;
   quitButtonWidth=width/20;
   quitButtonHeight=height/20;
@@ -121,6 +144,56 @@ void setup ()
    nextButtonY2=height*1/1.65;
    nextButtonWidth2=width/20;
    nextButtonHeight2=height/20;
+   //
+   nextButtonX3=width*1/20;
+   nextButtonY3=height*1/1.1;
+   nextButtonWidth3=width/20;
+   nextButtonHeight3=height/20;
+   //
+   nextButtonX4=width*0.13;
+   nextButtonY4=height*1/1.1;
+   nextButtonWidth4=width/20;
+   nextButtonHeight4=height/20;
+   //
+   nextButtonX5=width*0.21;
+   nextButtonY5=height*1/1.1;
+   nextButtonWidth5=width/20;
+   nextButtonHeight5=height/20;
+   //
+   titleX6=width*0.4;
+  titleY6=height*0.7;
+  titleWidth6=width/5;
+  titleHeight6=height/5;
+  //
+  titleX7=width*0.7;
+  titleY7=height*0.7;
+  titleWidth7=width/5;
+  titleHeight7=height/5;
+  //
+  titleX8=width*0.7;
+  titleY8=height*0.4;
+  titleWidth8=width/5;
+  titleHeight8=height/5;
+  //
+  eraseButtonX1=width*0.9;
+  eraseButtonY1=height*0.1;
+  eraseButtonWidth=width/20;
+  eraseButtonHeight=height/20;
+  //
+   titleX9=width*0.68;
+  titleY9=height*0.1;
+  titleWidth9=width/5;
+  titleHeight9=height/5;
+  //
+  nextButtonX6=width*1/2.4;
+   nextButtonY6=height*1/6;
+   nextButtonWidth6=width/20;
+   nextButtonHeight6=height/20;
+   //
+  titleX10=width*0.5;
+  titleY10=height*0.14;
+  titleWidth10=width/10;
+  titleHeight10=height/10;
   //
   rect(rectX1, rectY1, rectWidth, rectHeight);
   rect(rectX2, rectY2, rectWidth, rectHeight);
@@ -139,6 +212,11 @@ void setup ()
   titleFont3 = createFont("Harrington", 25); //Verify the font exists in Processing.JAVA
   titleFont4 = createFont("Harrington", 25); //Verify the font exists in Processing.JAVA
   titleFont5 = createFont("Harrington", 25); //Verify the font exists in Processing.JAVA
+  titleFont6 = createFont("Harrington", 25); //Verify the font exists in Processing.JAVA
+  titleFont7 = createFont("Harrington", 25); //Verify the font exists in Processing.JAVA
+  titleFont8 = createFont("Harrington", 25); //Verify the font exists in Processing.JAVA
+  titleFont9 = createFont("Harrington", 25); //Verify the font exists in Processing.JAVA
+  titleFont10= createFont("Harrington", 25); //Verify the font exists in Processing.JAVA
   // Tools / Create Font / Find Font in list to verify / Do not press "OK", known bug
   //
 }//End setup
@@ -152,6 +230,11 @@ void draw()
   if (rect1ON==true)rect(titleX3, titleY3, titleWidth3, titleHeight3);
   if (rect2ON==true)rect( titleX4, titleY4, titleWidth4, titleHeight4);
   if (rect3ON==true)rect( titleX5, titleY5, titleWidth5, titleHeight5);
+  if (rect4ON==true)rect( titleX6, titleY6, titleWidth6, titleHeight6);
+  if (rect5ON==true)rect( titleX7, titleY7, titleWidth7, titleHeight7);
+  if (rect6ON==true)rect( titleX8, titleY8, titleWidth8, titleHeight8);
+  rect( titleX9, titleY9, titleWidth9, titleHeight9);
+  rect(titleX10, titleY10, titleWidth10, titleHeight10);
   //
   fill(purple); //Ink, hexidecimal copied from Color Selector
   textAlign( CENTER, CENTER); //Align X*Y, see Processing.org / Reference
@@ -194,6 +277,46 @@ void draw()
   if (rect3ON==true)text(title5, titleX5, titleY5, titleWidth5, titleHeight5);
   fill(resetDefaultInk);
   //
+   fill(purple); //Ink, hexidecimal copied from Color Selector
+  textAlign( CENTER, CENTER); //Align X*Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | Right ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  titleSize = 20; //Change this number until it fits
+  if (rect4ON==true)textFont(titleFont6, titleSize);
+  if (rect4ON==true)text(title6, titleX6, titleY6, titleWidth6, titleHeight6);
+  fill(resetDefaultInk);
+  //
+  fill(purple); //Ink, hexidecimal copied from Color Selector
+  textAlign( CENTER, CENTER); //Align X*Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | Right ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  titleSize = 20; //Change this number until it fits
+  if (rect5ON==true)textFont(titleFont7, titleSize);
+  if (rect5ON==true)text(title7, titleX7, titleY7, titleWidth7, titleHeight7);
+  fill(resetDefaultInk);
+  //
+  fill(purple); //Ink, hexidecimal copied from Color Selector
+  textAlign( CENTER, CENTER); //Align X*Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | Right ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  titleSize = 20; //Change this number until it fits
+  if (rect6ON==true)textFont(titleFont8, titleSize);
+  if (rect6ON==true)text(title8, titleX8, titleY8, titleWidth8, titleHeight8);
+  fill(resetDefaultInk);
+  //
+  fill(purple); //Ink, hexidecimal copied from Color Selector
+  textAlign( CENTER, CENTER); //Align X*Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | Right ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  titleSize = 20; //Change this number until it fits
+  textFont(titleFont9, titleSize);
+  text(title9, titleX9, titleY9, titleWidth9, titleHeight9);
+  fill(resetDefaultInk);
+  //
+    fill(purple); //Ink, hexidecimal copied from Color Selector
+  textAlign( CENTER, CENTER); //Align X*Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | Right ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  titleSize = 20; //Change this number until it fits
+  textFont(titleFont10, titleSize);
+  text(title10, titleX10, titleY10, titleWidth10, titleHeight10);
+  fill(resetDefaultInk);
+  //
   //Hover-over
   if ( mouseX>startButtonX && mouseX<startButtonX+startButtonWidth && mouseY>startButtonY && mouseY<startButtonY+startButtonHeight ) {
     buttonFill = yellow;
@@ -234,6 +357,56 @@ void draw()
   if (rect2ON==true)rect(nextButtonX2, nextButtonY2, nextButtonWidth2, nextButtonHeight2);
   fill(resetButtonColour);
   //
+   //Hover-over
+  if ( mouseX>nextButtonX3 && mouseX<nextButtonX3+nextButtonWidth3 && mouseY>nextButtonY3 && mouseY<nextButtonY3+nextButtonHeight3) {
+    buttonFill = red;
+  } else {
+    buttonFill = purple;
+  }//End Hover-Over
+  fill(buttonFill); //2-colours to start, remember that nightMode adds choice
+  if (rect3ON==true)rect(nextButtonX3, nextButtonY3, nextButtonWidth3, nextButtonHeight3);
+  fill(resetButtonColour);
+  //
+  //Hover-over
+  if ( mouseX>nextButtonX4 && mouseX<nextButtonX4+nextButtonWidth4 && mouseY>nextButtonY4 && mouseY<nextButtonY4+nextButtonHeight4) {
+    buttonFill = red;
+  } else {
+    buttonFill = purple;
+  }//End Hover-Over
+  fill(buttonFill); //2-colours to start, remember that nightMode adds choice
+  if (rect3ON==true)rect(nextButtonX4, nextButtonY4, nextButtonWidth4, nextButtonHeight4);
+  fill(resetButtonColour);
+  //
+  //Hover-over
+  if ( mouseX>nextButtonX5 && mouseX<nextButtonX5+nextButtonWidth5 && mouseY>nextButtonY5 && mouseY<nextButtonY5+nextButtonHeight5) {
+    buttonFill = red;
+  } else {
+    buttonFill = purple;
+  }//End Hover-Over
+  fill(buttonFill); //2-colours to start, remember that nightMode adds choice
+  if (rect3ON==true)rect(nextButtonX5, nextButtonY5, nextButtonWidth5, nextButtonHeight5);
+  fill(resetButtonColour);
+  //
+   //Hover-over
+  if ( mouseX>eraseButtonX1 && mouseX<eraseButtonX1+eraseButtonWidth && mouseY>eraseButtonY1 && mouseY<eraseButtonY1+eraseButtonHeight) {
+    buttonFill = red;
+  } else {
+    buttonFill = purple;
+  }//End Hover-Over
+  fill(buttonFill); //2-colours to start, remember that nightMode adds choice
+  rect(eraseButtonX1, eraseButtonY1, eraseButtonWidth,eraseButtonHeight);
+  fill(resetButtonColour);
+  //
+   //Hover-over
+  if ( mouseX> nextButtonX6 && mouseX<nextButtonX6+nextButtonWidth6 && mouseY>nextButtonY6 && mouseY<nextButtonY6+nextButtonHeight6) {
+    buttonFill = red;
+  } else {
+    buttonFill = purple;
+  }//End Hover-Over
+  fill(buttonFill); //2-colours to start, remember that nightMode adds choice
+  rect(nextButtonX6, nextButtonY6, nextButtonWidth6,nextButtonHeight6);
+  fill(resetButtonColour);
+  //
   //Repeating CONSOLE values illustrating mouseX and mouseY related to a formula, mouse buttons
   //println("X-Value", quitButtonX, "\t", mouseX, "\t", quitButtonX+quitButtonWidth, "\t\t Look at the middle value");
   //println("Y-Value", quitButtonY, "\t", mouseY, "\t", quitButtonY+quitButtonHeight, "\t\t Look at the middle value");
@@ -269,6 +442,38 @@ void mousePressed() {
       rect3ON=true;
     }
   }
+  if ( mouseX>nextButtonX3 && mouseX<nextButtonX3 +nextButtonWidth3 && mouseY>nextButtonY3 && mouseY<nextButtonY3+nextButtonHeight3 ) {
+    if (rect4ON==true) {
+      rect4ON=false;
+    } else {
+      rect4ON=true;
+    }
+  }
+  if ( mouseX>nextButtonX4 && mouseX<nextButtonX4 +nextButtonWidth4 && mouseY>nextButtonY4 && mouseY<nextButtonY4+nextButtonHeight4) {
+    if (rect5ON==true) {
+      rect5ON=false;
+    } else {
+      rect5ON=true;
+    }
+  }
+  if ( mouseX>nextButtonX5 && mouseX<nextButtonX5 +nextButtonWidth5 && mouseY>nextButtonY5 && mouseY<nextButtonY5+nextButtonHeight5) {
+    if (rect6ON==true) {
+      rect6ON=false;
+    } else {
+      rect6ON=true;
+    }
+  }
+  if ( mouseX>eraseButtonX1 && mouseX<eraseButtonX1 +eraseButtonWidth && mouseY>eraseButtonY1 && mouseY<eraseButtonY1+eraseButtonHeight) noLoop();
+   
+  if ( mouseX>nextButtonX6 && mouseX<nextButtonX6 +nextButtonWidth6 && mouseY>nextButtonY6 && mouseY<nextButtonY6+nextButtonHeight6){
+   rect1ON=false;
+   rect2ON=false;
+   rect3ON=false;
+   rect4ON=false;
+   rect5ON=false;
+   rect6ON=false;
+  }//End Reset
+  
 }//End mousePressed
 //
 //End Main Program
