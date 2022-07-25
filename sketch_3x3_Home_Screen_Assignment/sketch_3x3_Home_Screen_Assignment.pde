@@ -42,15 +42,17 @@ String title8= "By choosing this chocoloate, you seek adventures and are a dared
 float titleX8, titleY8, titleWidth8, titleHeight8;
 PFont titleFont8;
 Boolean rect6ON=false;
-String title9= "By choosing this chocolate you are selfy centered";
+String title9= "By choosing this chocolate you are self-centered";
 float titleX9, titleY9, titleWidth9, titleHeight9;
 PFont titleFont9;
 Boolean rect7ON=false;
 float nextButtonX6, nextButtonY6, nextButtonWidth6, nextButtonHeight6;
-String title10= "Stop Program";
+String title10= "Stop/ReStart Program";
 float titleX10, titleY10, titleWidth10, titleHeight10;
 PFont titleFont10;
 float nextButtonX7, nextButtonY7, nextButtonWidth7, nextButtonHeight7;
+float rectX10, rectY10, rectX11, rectY11, rectX12, rectY12, rectX13, rectY13, rectX14, rectY14, rectX15, rectY15, rectX16, rectY16, rectX17, rectY17, rectX18, rectY18;
+Boolean rect8ON=false;
 //
 void setup ()  
 { 
@@ -100,6 +102,25 @@ void setup ()
   rectY8=height*2/3;
   rectX9=width*2/3;
   rectY9=height*2/3;
+  //
+  rectX10=width*0;
+  rectY10=height*0;
+  rectX11=width*1/3;
+  rectY11=height*0;
+  rectX12=width*2/3;
+  rectY12=height*0;
+  rectX13=width*0;
+  rectY13=height*1/3;
+  rectX14=width*1/3;
+  rectY14=height*1/3;
+  rectX15=width*2/3;
+  rectY15=height*1/3;
+  rectX16=width*0;
+  rectY16=height*2/3;
+  rectX17=width*1/3;
+  rectY17=height*2/3;
+  rectX18=width*2/3;
+  rectY18=height*2/3;
   //Text Population
   titleX1 = width*1/3;
   titleY1 = height*1/3;
@@ -191,7 +212,7 @@ void setup ()
   titleWidth10=width/10;
   titleHeight10=height/10;
   //
-  nextButtonX7=width*1/3.5;
+  nextButtonX7=width*1/3.7;
    nextButtonY7=height*1/1.1;
    nextButtonWidth7=width/20;
    nextButtonHeight7=height/20;
@@ -205,6 +226,7 @@ void setup ()
   rect(rectX7, rectY7, rectWidth, rectHeight);
   rect(rectX8, rectY8, rectWidth, rectHeight);
   rect(rectX9, rectY9, rectWidth, rectHeight);
+  
   //
   //Single Executed Code
   //Fonts from OS (Operating System)
@@ -217,7 +239,7 @@ void setup ()
   titleFont7 = createFont("Harrington", 25); //Verify the font exists in Processing.JAVA
   titleFont8 = createFont("Harrington", 25); //Verify the font exists in Processing.JAVA
   titleFont9 = createFont("Harrington", 25); //Verify the font exists in Processing.JAVA
-  titleFont10= createFont("Harrington", 25); //Verify the font exists in Processing.JAVA
+  titleFont10= createFont("Harrington", 10); //Verify the font exists in Processing.JAVA
   // Tools / Create Font / Find Font in list to verify / Do not press "OK", known bug
   //
 }//End setup
@@ -310,10 +332,10 @@ void draw()
   if (rect7ON==true)text(title9, titleX9, titleY9, titleWidth9, titleHeight9);
   fill(resetDefaultInk);
   //
-    fill(purple); //Ink, hexidecimal copied from Color Selector
+  fill(purple); //Ink, hexidecimal copied from Color Selector
   textAlign( CENTER, CENTER); //Align X*Y, see Processing.org / Reference
   //Values: [ LEFT | CENTER | Right ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-  titleSize = 20; //Change this number until it fits
+  titleSize = 15; //Change this number until it fits
   textFont(titleFont10, titleSize);
   text(title10, titleX10, titleY10, titleWidth10, titleHeight10);
   fill(resetDefaultInk);
@@ -399,7 +421,7 @@ void draw()
   fill(resetButtonColour);
   //
    //Hover-over
-  if ( mouseX> nextButtonX7&& mouseX<nextButtonX7+nextButtonWidth7 && mouseY>nextButtonY7 && mouseY<nextButtonY7+nextButtonHeight7) {
+  if ( mouseX> nextButtonX7 && mouseX<nextButtonX7+nextButtonWidth7 && mouseY>nextButtonY7 && mouseY<nextButtonY7+nextButtonHeight7) {
     buttonFill = red;
   } else {
     buttonFill = purple;
@@ -411,6 +433,14 @@ void draw()
   //Repeating CONSOLE values illustrating mouseX and mouseY related to a formula, mouse buttons
   //println("X-Value", quitButtonX, "\t", mouseX, "\t", quitButtonX+quitButtonWidth, "\t\t Look at the middle value");
   //println("Y-Value", quitButtonY, "\t", mouseY, "\t", quitButtonY+quitButtonHeight, "\t\t Look at the middle value");
+  //
+  if (rect8ON==true)rect(rectX10, rectY10, rectWidth, rectHeight);
+  if (rect8ON==true)rect(rectX12, rectY12, rectWidth, rectHeight);
+  if (rect8ON==true)rect(rectX13, rectY13, rectWidth, rectHeight);
+  if (rect8ON==true)rect(rectX15, rectY15, rectWidth, rectHeight);
+  if (rect8ON==true) rect(rectX16, rectY16, rectWidth, rectHeight);
+  if (rect8ON==true)rect(rectX17, rectY17, rectWidth, rectHeight);
+  if (rect8ON==true)rect(rectX18, rectY18, rectWidth, rectHeight);
 }//End draw
 //
 void keyPressed() {
@@ -467,20 +497,20 @@ void mousePressed() {
  
    
   if ( mouseX>nextButtonX6 && mouseX<nextButtonX6 +nextButtonWidth6 && mouseY>nextButtonY6 && mouseY<nextButtonY6+nextButtonHeight6){
-   rect1ON=false;
-   rect2ON=false;
-   rect3ON=false;
-   rect4ON=false;
-   rect5ON=false;
-   rect6ON=false;
+  if (rect8ON==true) {
+      rect8ON=false;
+    } else {
+      rect8ON=true;
+    }
   }//End Reset
   
-  if ( mouseX>nextButtonX7 && mouseX<nextButtonX7 +nextButtonWidth7 && mouseY>nextButtonY7 && mouseY<nextButtonY7+nextButtonHeight7);
-  if (rect7ON==true) {
+   if ( mouseX>nextButtonX7 && mouseX<nextButtonX7+nextButtonWidth7 && mouseY>nextButtonY7 && mouseY<nextButtonY7+nextButtonHeight7 ) {
+    if (rect7ON==true) {
       rect7ON=false;
     } else {
       rect7ON=true;
     }
+  }
 }//End mousePressed
 //
 //End Main Program
